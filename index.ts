@@ -11,7 +11,17 @@ const logValue = (element: (string | number)[]): (string | number)[] => {
   return outputNumber;
 };
 
-logValue([1, 2, '3']);
+// arrow functions logged in DOM
+const logValueDOM = (element) => {
+  const mapOutput = document.createElement('div');
+  mapOutput.setAttribute('class', 'output-container');
+  mapOutput.style.background = 'rebeccapurple';
+  mapOutput.style.color = 'white';
+  mapOutput.textContent = element;
+  appDiv.appendChild(mapOutput);
+};
+
+logValueDOM(['hello my sweet Samurana!', 'hi!'].map((el) => el));
 
 // global values
 const testArray = [1, 2, 3, 4, 5, ''];
